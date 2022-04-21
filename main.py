@@ -37,30 +37,37 @@ class Calc(QtWidgets.QMainWindow):
         self.ui.btn_minus.clicked.connect(lambda: self.write_number(self.ui.btn_minus.text()))
         
         self.ui.btn_C.clicked.connect(lambda: self.write_number(self.ui.btn_C.text()))
-        self.ui.btn_back.clicked.connect(lambda: self.write_number(self.ui.btn_back.text()))
+        self.ui.btn_back.clicked.connect(lambda: self.write_number("Backspace"))
         
         self.ui.btn_equal.clicked.connect(self.results)
     
     def write_number(self, number):
+        a = ["-", "+", "*", "/"]
         if number == "C":
             self.ui.label.setText("0")
         elif number == "Backspace":
             self.ui.label.setText(self.ui.label.text()[0:-1])
         elif self.ui.label.text() == "0" or self.is_equal:
-            self.ui.label.setText(number)
-            self.is_equal = False
+            if not number in a[1:]:
+                self.ui.label.setText(number)
+                self.is_equal = False
         else:
-            self.ui.label.setText(self.ui.label.text() + str(number))
-        
-        a = ["+", "-", "*", "/"]
-        if Check(a, self.ui.label.text()):
+            if not (self.ui.label.text()[-1] in a and number in a[1:]):
+                self.ui.label.setText(self.ui.label.text() + str(number))
+          
+        if Check(a, self.ui.label.text().lstrip("-")):
             self.ui.label_2.setText(str(eval(self.ui.label.text())))
+        else:
+            self.ui.label_2.setText(" ")
         
     def results(self):
-        res = eval(self.ui.label.text())
-        self.ui.label.setText("Результат: " + str(res))
-        self.ui.label_2.setText(" ")
-        self.is_equal = True
+        try:
+            res = eval(self.ui.label.text())
+            self.ui.label.setText(str(res))
+            self.ui.label_2.setText(" ")
+            self.is_equal = True
+        except SyntaxError:
+            pass
         
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])

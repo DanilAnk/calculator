@@ -10,15 +10,67 @@
     <height>640</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>459</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>459</width>
+    <height>640</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	color: white;
+	background-color: rgb(39, 39, 39);
+	font-family: Rubik;
+	font-size: 18px;
+	font-weight: 600
+}
+QLabel#label {
+	font-size: 20px;
+}
+QLabel#label_2 {
+	font-size: 14px;
+}
+
+QPushButton {
+	background-color: rgb(29, 29, 29);
+	border: none;
+}
+QPushButton:hover {
+    background-color: #666;
+}
+QPushButton:pressed {
+    background-color: #888;
+}
+
+QPushButton#btn_equal {
+	background-color: rgb(0, 35, 107);
+}
+QPushButton#btn_equal:hover {
+	background-color: rgb(0, 48, 145);
+}
+
+QPushButton#btn_multi, #btn_del, #btn_plus, #btn_minus, #btn_C, #btn_back{
+	background-color: rgb(54, 54, 54);
+}
+QPushButton#btn_multi:hover, #btn_del:hover, #btn_plus:hover, #btn_minus:hover, #btn_C:hover, #btn_back:hover {
+	background-color: #666;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(39, 39, 39);</string>
+    <string notr="true"/>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -39,8 +91,7 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
+     <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(39, 39, 39);</string>
     </property>
     <property name="text">
@@ -69,8 +120,7 @@ background-color: rgb(39, 39, 39);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(205, 205, 205);
+     <string notr="true">color: rgb(205, 205, 205);
 background-color: rgb(39, 39, 39);</string>
     </property>
     <property name="text">
@@ -80,7 +130,7 @@ background-color: rgb(39, 39, 39);</string>
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -104,10 +154,11 @@ background-color: rgb(39, 39, 39);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(74, 74, 74);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>С</string>
@@ -128,10 +179,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(74, 74, 74);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>/</string>
@@ -152,10 +204,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(74, 74, 74);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>*</string>
@@ -176,13 +229,24 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(74, 74, 74);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>Backspace</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/icons/backspace_FILL0_wght400_GRAD0_opsz48.png</normaloff>:/icons/backspace_FILL0_wght400_GRAD0_opsz48.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -209,10 +273,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>7</string>
@@ -242,10 +307,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>8</string>
@@ -275,10 +341,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>9</string>
@@ -299,10 +366,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(74, 74, 74);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>-</string>
@@ -332,10 +400,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>4</string>
@@ -365,10 +434,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>5</string>
@@ -398,10 +468,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>6</string>
@@ -422,10 +493,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(74, 74, 74);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>+</string>
@@ -455,10 +527,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>1</string>
@@ -488,10 +561,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>2</string>
@@ -521,10 +595,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>3</string>
@@ -554,10 +629,11 @@ color: rgb(255, 255, 255);</string>
          <height>171</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(0, 35, 107);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>=</string>
@@ -587,10 +663,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Heh</string>
@@ -620,10 +697,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>0</string>
@@ -653,10 +731,11 @@ color: rgb(255, 255, 255);</string>
          <height>84</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(29, 29, 29);
-font: 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>,</string>
@@ -667,6 +746,8 @@ color: rgb(255, 255, 255);</string>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="files.qrc"/>
+ </resources>
  <connections/>
 </ui>
